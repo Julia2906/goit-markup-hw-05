@@ -501,12 +501,6 @@ img {
 /* ===================== Footer ========================*/
 
 /* ================ Modal Window ===================== */
-.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.2);
-}
 
 .modal {
   position: fixed;
@@ -522,6 +516,13 @@ img {
   height: 100%;
   width: 100%;
   background: rgba(46, 47, 66, 0.4);
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.2);
 }
 
 .backdrop {
@@ -551,6 +552,10 @@ img {
   right: 24px;
   top: 24px;
 
+  transition-property: background-color, border;
+  transition-duration: var(--transition-dur);
+  transition-timing-function: var(--transition-func);
+
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -563,7 +568,7 @@ img {
 .close-button:hover,
 .close-button:focus {
   cursor: pointer;
-  background-color: var(--active-button);
+  background-color: var(--background-color-white);
   border: none;
 }
 
@@ -573,10 +578,6 @@ img {
   transition-timing-function: var(--transition-func);
 }
 
-.close-button-icon:hover,
-.close-button-icon:focus{
-  fill: var(--background-color-white);
-}
 
 /* ================ Modal Window ===================== */
 
