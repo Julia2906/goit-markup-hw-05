@@ -98,6 +98,22 @@ img {
   letter-spacing: 0.32px;
 }
 
+.link-nav-active {
+  position: relative;
+  color: var(--active-button);
+}
+
+.link-nav-active::after {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--active-button);
+}
 .site-nav .link {
   font-weight: 500;
 }
