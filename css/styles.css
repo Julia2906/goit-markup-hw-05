@@ -10,6 +10,9 @@
   --portfolio-button: #e7e9fc;
   --customers-border: #8e8f99;
   --footer-active-icons: #31d0aa;
+  --dairy: #FCFCFC;
+  --transition-dur: 250ms;
+  --transition-func: cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 /* =========== COMMON ========== */
 
@@ -136,6 +139,15 @@ img {
 .auth-nav .link {
   font-weight: 400;
   color: var(--global-text-color);
+}
+
+.link-nav,
+.link-auth{
+  display: inline-block;
+  padding: 24px 0;
+  transition-property: color;
+  transition-duration: var(--transition-dur);
+  transition-timing-function: var(--transition-func);
 }
 
 .list {
@@ -475,6 +487,44 @@ img {
   gap: 16px;
 }
 /* ===================== Footer ========================*/
+
+/* ================ Modal Window ===================== */
+.modal .is-hidden{
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal{
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+  transition-property: visibility, opacity;
+  transition-duration:var(--transition-dur) ;
+  transition-timing-function: var(--transition-func);
+
+  height: 100%;
+  width: 100%;
+  background:rgba(46, 47, 66, 0.40);
+}
+
+.backdrop {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 408px;
+  height: 584px;
+  border-radius: 4px;
+  background: var(--dairy);
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+}
+
+
+
+/* ================ Modal Window ===================== */
 
 /* ===================== Portfolio ==================== */
 
